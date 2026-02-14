@@ -2,131 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Valentine’s Day Shonnaa ❤</title>
-
+  <title>Valentine</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-      min-height: 100vh;
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      overflow: hidden;
+      background: pink;
+      font-family: Arial, sans-serif;
     }
-
     .card {
-      background: #ffffff;
-      padding: 25px;
-      border-radius: 20px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
       text-align: center;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-      max-width: 350px;
-      width: 90%;
-      animation: fadeIn 1.5s ease;
-      z-index: 2;
     }
-
-    h1 {
-      color: #e63946;
-      font-size: 26px;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 16px;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    .heart {
-      font-size: 45px;
-      color: #e63946;
-      animation: beat 1s infinite;
-      margin: 10px 0;
-    }
-
     button {
-      background: #e63946;
-      color: white;
-      border: none;
-      padding: 12px 22px;
-      border-radius: 25px;
-      font-size: 15px;
-      cursor: pointer;
-      margin-top: 15px;
-    }
-
-    @keyframes beat {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.2); }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .falling-heart {
-      position: absolute;
-      top: -10%;
-      color: #ff4d6d;
-      font-size: 20px;
-      animation: fall linear infinite;
-    }
-
-    @keyframes fall {
-      to {
-        transform: translateY(110vh);
-      }
+      margin-top: 10px;
+      padding: 10px 15px;
     }
   </style>
 </head>
-
 <body>
 
   <div class="card">
-    <h1>Happy Valentine’s Day Shonnaa ❤</h1>
-    <div class="heart">❤</div>
-
-    <p id="message">
-      Shonnaa, kaise hua ki tum meri zindagi ka sabse khoobsurat hissa ban gayi 💕
-    </p>
-
-    <button onclick="changeMessage()">Secret Message 💌</button>
+    <h1>Happy Valentine’s Day ❤</h1>
+    <p id="msg">You are special 💕</p>
+    <button onclick="change()">Click me</button>
   </div>
 
   <script>
-    const messages = [
-      "Tumhari muskaan meri duniya roshan kar deti hai 😍",
-      "Har din tumhare saath ek gift jaisa lagta hai 💖",
-      "Tum ho toh sab kuch perfect lagta hai 💕",
-      "Main tumhare bina apni zindagi imagine nahi kar sakta ❤",
-      "Forever & Always, just you and me 💑"
-    ];
-
-    let index = 0;
-
-    function changeMessage() {
-      index = (index + 1) % messages.length;
-      document.getElementById("message").innerText = messages[index];
+    function change() {
+      document.getElementById("msg").innerText = "I love you 💖";
     }
-
-    // Falling hearts animation
-    setInterval(() => {
-      const heart = document.createElement("div");
-      heart.className = "falling-heart";
-      heart.innerText = "❤";
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.animationDuration = (3 + Math.random() * 3) + "s";
-      document.body.appendChild(heart);
-
-      setTimeout(() => {
-        heart.remove();
-      }, 6000);
-    }, 300);
   </script>
 
 </body>
